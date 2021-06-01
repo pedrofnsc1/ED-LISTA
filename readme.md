@@ -1,6 +1,6 @@
 # Estruturas de Dados com JavaScript
 
-Este reposítório contém todos códigos utilizados durante a disciplina de Estruturas de Dados do curso de Análise e Desenvolvimento de Sistemas/UFRN no semestre 2020.1.
+Este reposítório contém todos códigos utilizados durante a disciplina de Estruturas de Dados do curso de Análise e Desenvolvimento de Sistemas/UFRN no semestre 2021.1.
 
 A disciplina de Estruturas de dados segue uma abordagem de desenvolvimento dirigido as testes (TDD) onde para cada Tipo Abstrato de Dados:
 
