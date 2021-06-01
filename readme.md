@@ -89,6 +89,13 @@ Modifique o arquivo package.json para adicionar o script de criação de documen
 	},
 ```
 
+Modifique o arquivo .gitignore para que o git ignore os arquivos da documentação. Adicione ao final do arquivo:
+
+```
+# Arquivos de documentação
+/docs
+```
+
 Crie o arquivo readme.md e adicione algum texto.
 
 Para executar os testes:
