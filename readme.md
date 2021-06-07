@@ -10,6 +10,15 @@ A disciplina de Estruturas de dados segue uma abordagem de desenvolvimento dirig
 
 Utilize esse repositório caso não deseje configurar um novo.
 
+Caso deseje clonar esse repositório execute os seguintes comandos:
+
+```
+git clone https://github.com/taniro/EstruturasDeDados2021.git
+npm install
+npm test
+npm run docs
+```
+
 Caso deseje criar um novo repositório execute os seguintes comandos:
 
 ```
