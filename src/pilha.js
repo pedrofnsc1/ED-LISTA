@@ -1,54 +1,50 @@
-export default class Pilha {
-    constructor(size = 10) {
+export default class stack {
+    constructor(size = 5) {
         this.maxSize = size;
-        this.dados = [];
-        this.topo = -1;
+        this.data = [];
+        this.top = -1;
     };
 
-    push(novoDado) {
+    push(newData) {
         if (this.isFull()) {
-            throw new Error("stack overflow");
-        }
-        else {
-            this.dados[++this.topo] = novoDado;
+            throw new Error('stack overflow');
+        } else {
+            this.data[this.top++] = newData
         }
     };
 
     pop() {
         if (this.isEmpty()) {
-            throw new Error("stack underflow");
+            throw new Error('stack underflow');
         } else {
-            return this.dados[this.topo--];
+            return this.data[this.top--];
         }
-    };
+    }
 
-    top() {
-        if (this.isEmpty()) {
-            return "Pilha vazia";
-        }
-        return this.dados[this.topo];
-    };
+    topItem() {
+        return this.data[this.top];
+    }
 
     size() {
-        return this.topo + 1;
-    };
+        return this.top + 1;
+    }
 
     isEmpty() {
         return this.size() === 0;
-    };
+    }
 
     isFull() {
         return this.size() === this.maxSize;
-    };
+    }
 
     clear() {
-        this.topo = -1;
-    };
+        this.top = -1;
+    }
 
     toString() {
         let result = "[";
-        for (let i = 0; i <= this.topo; i++) {
-            result += ` ${this.dados[i]} `;
+        for (let i = 0; i <= this.top; i++) {
+            result += ` ${this.data[this]} `;
         }
         result += "]";
         return result;

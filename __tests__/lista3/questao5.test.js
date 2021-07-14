@@ -15,20 +15,19 @@ test('Instanciar lista', () => {
   lista.append('R');
   lista.append('O');
   expect(lista.toString()).toBe('P->E->D->R->O');
-  console.log(lista.toString());
 });
 
 
 
 test('Embaralhar lista', () => {
-
-  lista.add('1');
-  lista.add('R');
-  lista.add('D');
-  lista.add('E');
-  lista.add('P');
-  expect(lista.toString()).toBe('P->E->D->R->1');
-  lista = embaralhaLista(lista);
-  console.log(lista.toString(lista));
+  let l = new Lista()
+  l.add(5);
+  l.add(4);
+  l.add(3);
+  l.add(2);
+  l.add(1);
+  expect(l.toString()).toBe("1->2->3->4->5");
+  l = embaralhaLista(l);
+  console.log(l.toString());
 
 });

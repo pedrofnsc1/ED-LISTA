@@ -1,70 +1,71 @@
-import Pilha from "../src/pilha";
+import Stack from "../src/pilha";
 
-let p;
+let s;
 
-beforeEach ( () => {
-    p = new Pilha(5);
+beforeEach(() => {
+    s = new Stack(5);
 });
 
 test("Pilha está vazia",
- () => {
-     p.push("dado")
-     expect(p.isEmpty()).toBe(false);
- }
+    () => {
+        s.push("dado")
+        expect(s.isEmpty()).toBe(false);
+    }
 );
 
 test("Stack underflow",
-		() => {
-			expect(()=>{
-				p.pop()
-			}).toThrowError("stack underflow");
-		}
+    () => {
+        expect(() => {
+            s.pop()
+        }).toThrowError("stack underflow");
+    }
 )
 
 test("stack overflow",
- () => {
-    p.push("1");
-    p.push("2");
-    p.push("3");
-    p.push("4");
-    p.push("5");
-    expect(() => {
-        p.push("6")
-    }).toThrowError("stack overflow");
+    () => {
+        s.push("1");
+        s.push("2");
+        s.push("3");
+        s.push("4");
+        s.push("5");
+        expect(() => {
+            s.push("6")
+        }).toThrowError("stack overflow");
 
-});
+    });
 
-test("Add um elemento", () =>{
-    expect(p.isEmpty()).toBe(true);
- }
+test("Add um elemento", () => {
+    expect(s.isEmpty()).toBe(true);
+}
 );
 
-test("Size inicial", () =>{
-    expect(p.size()).toBe(0);
- }
+test("Size inicial", () => {
+    expect(s.size()).toBe(0);
+}
 );
 
 test("push(5)", () => {
-    p.push(5);
-    expect(p.size()).toBe(1);
+    s.push(5);
+    expect(s.size()).toBe(1);
 
 });
 
-test("push(5), push(6), push(7)", 
-() => {
-    p.push(5);
-    p.push(6);
-    p.push(7);
-    expect(p.size()).toBe(3);
+test("push(5), push(6), push(7)",
+    () => {
+        s.push(5);
+        s.push(6);
+        s.push(7);
+        expect(s.size()).toBe(3);
+        s.pop();
 
-});
-test("push(5), push(6), push(7), pop(), top()", () => {
-    p.push(5);
-    p.push(6);
-    p.push(7);
-    p.pop()
-    expect(p.size()).toBe(2);
-    expect(p.top()).toBe(6);
+    });
+test("push(5), push(6), push(7), pop(), topItem()", () => {
+    s.push(5);
+    s.push(6);
+    s.push(7);
+    s.pop()
+    expect(s.size()).toBe(2);
+    expect(s.topItem()).toBe(6);
 
 })
 

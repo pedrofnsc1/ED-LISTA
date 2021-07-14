@@ -11,23 +11,25 @@ export default class Lista {
   }
   add(dado) {
     let novo_no = new Node(dado);
-
     novo_no.proximo = this.head.proximo;
     this.head.proximo = novo_no;
   }
+
   append(dado) {
     let novo_no = new Node(dado);
-
     if (this.isEmpty()) {
       this.head.proximo = novo_no;
     } else {
       let aux = this.head.proximo;
       while (aux.proximo !== null) {
         aux = aux.proximo;
+
       }
       aux.proximo = novo_no;
     }
   }
+
+
   removeFirst() {
     if (this.isEmpty()) {
       throw new Error("A lista está vazia.");
@@ -36,6 +38,7 @@ export default class Lista {
       this.head.proximo = aux.proximo;
     }
   }
+
   removeLast() {
     if (this.isEmpty()) {
       throw new Error("A lista está vazia.");
@@ -67,15 +70,14 @@ export default class Lista {
     return this.head.proximo === null;
   }
   toString() {
-    let aux = this.head.proximo;
-    let result = "";
+    let tmp = this.head.proximo;
+    let texto = "";
 
-    while (aux !== null) {
-      result += aux.dado + (aux.proximo ? "->" : "");
-      aux = aux.proximo;
+    while (tmp !== null) {
+      texto += tmp.dado + (tmp.proximo ? "->" : "");
+      tmp = tmp.proximo;
     }
-
-    return result;
+    return texto;
   }
   length() {
     let cont = 0;
