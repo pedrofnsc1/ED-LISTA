@@ -1,23 +1,23 @@
-export default class stack {
-    constructor(size = 5) {
-        this.maxSize = size;
+export default class Stack {
+    constructor(length = 20) {
+        this.maxlength = length;
         this.data = [];
         this.top = -1;
     };
 
     push(newData) {
-        if (this.isFull()) {
-            throw new Error('stack overflow');
-        } else {
+        if (!this.isFull()) {
             this.data[this.top++] = newData
+        } else {
+            throw new Error("stack overflow");
         }
     };
 
     pop() {
-        if (this.isEmpty()) {
-            throw new Error('stack underflow');
+        if (!this.isEmpty()) {
+            return this.top--;
         } else {
-            return this.data[this.top--];
+            throw new Error("stack underflow");
         }
     }
 
@@ -25,16 +25,16 @@ export default class stack {
         return this.data[this.top];
     }
 
-    size() {
+    length() {
         return this.top + 1;
     }
 
     isEmpty() {
-        return this.size() === 0;
+        return this.length() === 0;
     }
 
     isFull() {
-        return this.size() === this.maxSize;
+        return this.length() === this.maxlength;
     }
 
     clear() {

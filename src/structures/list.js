@@ -14,7 +14,6 @@ export default class Lista {
     novo_no.proximo = this.head.proximo;
     this.head.proximo = novo_no;
   }
-
   append(dado) {
     let novo_no = new Node(dado);
     if (this.isEmpty()) {
@@ -28,8 +27,6 @@ export default class Lista {
       aux.proximo = novo_no;
     }
   }
-
-
   removeFirst() {
     if (this.isEmpty()) {
       throw new Error("A lista está vazia.");
@@ -38,12 +35,10 @@ export default class Lista {
       this.head.proximo = aux.proximo;
     }
   }
-
   removeLast() {
     if (this.isEmpty()) {
       throw new Error("A lista está vazia.");
     }
-
     let aux_a = this.head;
     let aux_b = this.head.proximo;
 
@@ -168,4 +163,3 @@ export default class Lista {
     return noAtual.dado;
   }
 }
-

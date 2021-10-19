@@ -1,15 +1,25 @@
-import Pilha from './../pilha';
-
-export default function verificaPilha(pilha) {
-  let aux = new Pilha(10);
-
-  for (let i = 0; i < pilha.size; i++) {
-    if (pilha[i] === '[' || pilha[i] === '(') {
-      aux.push(pilha[i]);
-    } else if (pilha[i] === ']' || pilha[i] === ')') {
-      let r = aux.pop();
-      if ((r === '(' && pilha[i] !== ')') || (r === '[' && pilha[i] !== ']')) return false;
+import Stack from '../stack';
+export default class verify {
+  constructor() {
+    this.stack = new Stack();
+    this.aux = null;
+  }
+  verifyStack(newSequence) {
+    if (newSequence === '') {
+      return 'theres no sequence here';
+    } else {
+      for (let i = 0; i < newSequence.length; i++) {
+        if (newSequence[i] === '[' || newSequence[i] === '(') {
+          this.stack.push(newSequence[i]);
+        } else if (newSequence[i] === ']' || newSequence[i] === ')') {
+          this.aux = this.stack.topItem();
+          if ((this.aux === '[' && newSequence[i] !== ']')
+            || (this.aux === '(' && newSequence[i] !== ']')) {
+            return false;
+          }
+        }
+      }
+      return this.stack.isEmpty();
     }
   }
-  return aux.isEmpty();
 }

@@ -1,4 +1,4 @@
-import Stack from "../src/pilha";
+import Stack from "../src/stack";
 
 let s;
 
@@ -39,14 +39,14 @@ test("Add um elemento", () => {
 }
 );
 
-test("Size inicial", () => {
-    expect(s.size()).toBe(0);
+test("length inicial", () => {
+    expect(s.length()).toBe(0);
 }
 );
 
 test("push(5)", () => {
     s.push(5);
-    expect(s.size()).toBe(1);
+    expect(s.length()).toBe(1);
 
 });
 
@@ -55,7 +55,7 @@ test("push(5), push(6), push(7)",
         s.push(5);
         s.push(6);
         s.push(7);
-        expect(s.size()).toBe(3);
+        expect(s.length()).toBe(3);
         s.pop();
 
     });
@@ -63,8 +63,8 @@ test("push(5), push(6), push(7), pop(), topItem()", () => {
     s.push(5);
     s.push(6);
     s.push(7);
-    s.pop()
-    expect(s.size()).toBe(2);
+    s.pop();
+    expect(s.length()).toBe(2);
     expect(s.topItem()).toBe(6);
 
 })
